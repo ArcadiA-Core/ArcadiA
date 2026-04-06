@@ -1,16 +1,3 @@
-$jsonSetString[category select;materials]
-$jsonSetString[item select;none]
-$jsonSetString[save selection;true]
-$await[save selection]
-$addTextDisplay[-# $json[Tcoin3] $$numberSeparator[$json[balance];,] $json[Ttoken] $numberSeparator[$json[token];,]
-;shopID]
-$addSeparator[true;small;shopID]
-$addTextDisplay[-# **`Category: $toTitleCase[$json[category select]]`**
-;shopID]
-$addActionRow[selectID;shopID]
-$addStringSelect[$json[category select]ID;Select an item to purchase;1;1;false;selectID]
-
-
 
 $jsonSetString[itemname;coal]
 $jsonSetString[item description;Material]
