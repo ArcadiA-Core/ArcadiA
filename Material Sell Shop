@@ -1,4 +1,4 @@
-$jsonSetString[category select;projectiles]
+$jsonSetString[category select;materials]
 $jsonSetString[item select;none]
 $jsonSetString[save selection;true]
 $await[save selection]
