@@ -18,11 +18,12 @@ $try
 $textSplit[$getVar[$json[category select];$authorID];-]
 $if[$splitText[$getTextSplitIndex[$json[itemname]]]==$json[itemname]]
 $jsonSetString[item owned;$splitText[$sum[$getTextSplitIndex[$json[itemname]];1]]]
+$jsonSetString[item description;($json[item owned]) - $json[item description]]
 $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];⛽️;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
  
  
@@ -51,7 +52,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];🪨;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
 
@@ -78,7 +79,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];🪨;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
 $jsonSetString[itemname;diamond]
@@ -104,7 +105,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];💎;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
 
@@ -131,7 +132,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];💎;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
 
@@ -158,7 +159,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];🪨;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
 $jsonSetString[itemname;gold_ore]
@@ -184,4 +185,4 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];🪨;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
