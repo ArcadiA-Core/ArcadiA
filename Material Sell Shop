@@ -1,6 +1,6 @@
 
 $jsonSetString[itemname;coal]
-$jsonSetString[item description;Material]
+$jsonSetString[item description;Fuel + Material]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;6] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -22,9 +22,11 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];🪨;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:fuelpump:;false;$json[category select]ID]
 
-
+ 
+ 
+ 
 
 $jsonSetString[itemname;cobblestone]
 $jsonSetString[item description;Material]
@@ -49,7 +51,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:StoneHareted:;false;$json[category select]ID]
 
 
 
@@ -76,11 +78,11 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:StoneHareted:;false;$json[category select]ID]
 
 
 $jsonSetString[itemname;diamond]
-$jsonSetString[item description;Material]
+$jsonSetString[item description;Gem + Material]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;600] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -102,12 +104,12 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:gem:;false;$json[category select]ID]
 
 
 
 $jsonSetString[itemname;emerald]
-$jsonSetString[item description;Material]
+$jsonSetString[item description;Gem Material]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;200] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -129,7 +131,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:gem:;false;$json[category select]ID]
 
 
 
@@ -156,7 +158,7 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:StoneHareted:;false;$json[category select]ID]
 
 
 $jsonSetString[itemname;gold_ore]
@@ -182,4 +184,4 @@ $jsonSetString[item icon;$json[T$json[itemname]]]
 $c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
 $endif
 $endtry
-$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];:StoneHareted:;false;$json[category select]ID]
