@@ -25,10 +25,11 @@ stone_pickaxe=<:StonePickaxe:1490541096240152667>=
 copper_pickaxe=<:CopperPickaxe:1490541103051575397>=
 iron_pickaxe=<:IronPickaxe:1490541109162545334>=
 silver_pickaxe=<:SilverPickaxe:1490541106914656256>=
-gold_pickaxe=🪙⛏️=
-ruby_pickaxe=🔻⛏️=
-emerald_pickaxe=🟢⛏️=
-diamond_pickaxe=💎⛏️=
+gold_pickaxe=<:GoldPickaxe:1491300010447343736>=
+titanium_pickaxe=<:TitaniumPickaxe:1491300012003561512>=
+ruby_pickaxe=<:RubyPickaxe:1491300014247514112>=
+emerald_pickaxe=<:EmeraldPickaxe:1491300012913721375>=
+diamond_pickaxe=<:DiamondPickaxe:1491300015724040343>=
 wooden_axe=<:WoodenAxe:1487768834101215303>=
 bow=<:Bow1:1485998563199815833>=
 fishing_rod=🎣=
@@ -39,9 +40,12 @@ apple=🍎=
 pear=🍐=
 raw_meat=🥩=
 cooked_meat=🍖=
+raw_stake=❓️=
 rotten_flesh=<:RottenFlesh:1488841244020047914>=
+bone=🦴=
 log=🪵=
 stick=🌴=
+treasure chest=🧰=
 cobblestone=<:CobbleStone:1490427784756072640>=
 copper=<:RawCopperOre:1490427796244271165>=
 coal=<:Charcoal:1490427788463706243>=
