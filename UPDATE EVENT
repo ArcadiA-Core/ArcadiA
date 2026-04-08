@@ -1,0 +1,8 @@
+$textSplit[$getVar[balance;$authorID];-]
+  $jsonSetString[balance;$splitText[1]]
+  $jsonSetString[token;$splitText[2]]
+  $textSplit[$getVar[level;$authorID];-]
+  $jsonSetString[user level;$splitText[1]]
+  $setVar[leadmoney;$json[balance];$authorID]
+  $setVar[leadlevel;$json[user level];$authorID]
+  
