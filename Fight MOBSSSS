@@ -1,0 +1,1031 @@
+$nomention
+
+
+  $if[$or[$checkContains[$customID;$authorIDstartmine]==true;$customID==$authorIDmedkit;$customID==$authorIDforfeit;$customID==$authorIDrefresh;$customID==$authorIDfightmob;$customID==$authorIDattack;$customID==$authorIDshield;$customID==$authorIDheal;$customID==$authorIDbow]==true]
+$if[$checkContains[$customID;$authorIDstartmine]==false]
+$if[true==false]
+$textSplit[$getVar[testers];,]
+$if[$checkContains[$username[$authorID];$unescape[$joinSplitText[\;]]]==false]
+$ephemeral
+❌️ | This feature is not out yet.
+$removeAllComponents
+$stop
+$endif
+$endif
+$if[$getVar[fightmob;$authorID]==]
+$setVar[fightmob;$messageID;$authorID]
+$endif
+$if[$getVar[fightmob;$authorID]!=$messageID]
+$ephemeral
+❌️ | This interaction is outdated.
+$removeAllComponents
+$stop
+$endif 
+
+$endif
+$jsonParse[{
+  "debug mode": "$toLowercase[true]",
+  "error": "false",
+  
+  "itemsdisplay": "",
+  "temp name": "",
+  "icon": "https://cdn.discordapp.com/attachments/897519348359499819/1486009784791597196/Untitled54_20260324101046.png?ex=69c3f1f5&is=69c2a075&hm=433090d606a6fde73b8491889d296d63285f2f866bb340c46fb714cd7e65f0d1&",
+  "test": "https://cdn.discordapp.com/attachments/1407399811480555622/1486212544996835420/Untitled58_20260324235021.png?ex=69c4aecb&is=69c35d4b&hm=d62325e59d18d42d53e0c3358397ae3fce91eb2a799e95897305c130c6e9a2a4&",
+  
+  "buffs": "$getVar[buffs;$authorID]",
+  "plrmobstats": "$getVar[plrmobstats;$authorID]",
+  "entitymobstats": "$getVar[entitymobstats;$authorID]",
+  "get health": "$getVar[health;$authorID]",
+
+  $c[           EVENTS                 ]
+  "mob encounter chance": "50",
+  "mob encounter": "$getVar[mob-encounter;$authorID]",
+
+  $c[          PLAYER ITEMS            ]
+  "get item": "",
+  "item display": "",
+  
+  "log": "",
+  "log display": "",
+  "log time": "[$numberSeparator[$getTimestamp;:]\]: // ",
+  
+  $c[     ====={ Icon / Textures }=====     ]
+  "texture capture": "",
+  "Talive": "❤️",
+  "Tlow": "❤️‍🩹",
+  "Tposion": "💚🤢",
+  "Tfreeze": "🩵🥶",
+  "Tfire": "❤️‍🔥🥵",
+  "Tdead": "💀",
+  "Tshield": "🛡",
+  "Tbandage": "🤕",
+  "Theal": "🩹",
+  "Tcoin3": "🪙",
+  
+  $c[     ====={ Player Stats }=====     ]
+  $textSplit[$getVar[level;$authorID];-]
+  "level": "$splitText[1]",
+  "xp": "$splitText[2]",
+  "maxxp": "$splitText[3]",
+  
+   $textSplit[$getVar[balance;$authorID];-]
+  "balance": "$splitText[1]",
+  "token": "$splitText[2]",
+  
+  "level up": "false",
+  "game level": "1",
+  "game xp": "0",
+  "game maxxp": "100",
+  "xp counter": "0",
+  "xpstrength": "20",
+  "xphits": "5",
+  "xpheals": "3",
+  "xphp": "5",  $c[divide]
+  "money counter": "0",
+  "mhits": "1",
+  "mheals": "1",
+  "mhp": "2",
+  
+  "shield": "0",
+  "bandage": "0",
+  "medkit": "0",
+  "bow": "0",
+  
+  $c[    - State -    ]
+  "miss": "false",
+  "miss chance": "50",
+  "crit": "false",
+  "crit chance": "30",
+  
+  "win": "false",
+  "lost": "false",
+  "forfeit": "",
+  "forfeit thumbnail": "$randomText[https://cdn.discordapp.com/attachments/1407399811480555622/1486424790670512408/file_00000000d124722f8a560c22739d6dca.png?ex=69c57476&is=69c422f6&hm=a53202f518de3eded77ff984ddffadc046d2c18489b952797cb20edd2bcb321a&;https://cdn.discordapp.com/attachments/897519348359499819/1486351258129404057/image_25c582a1.png?ex=69c52ffb&is=69c3de7b&hm=2920fb86ca93481953a3c5d3888e9eb73c9b1ef3594378e63b262fb93a46d36b&]",
+  
+  "alive": "true",
+  "dead": "false",
+  "defense": "false",
+  "heal buff": "$getVar[heal-buff;$authorID]",
+  "max heal": "1.1",
+  "max heal2": "2.5",
+  "medheal": "false",
+  "heal": "false",
+  "shoot": "false",
+  
+  $textSplit[$getVar[sword-equipped;$authorID];-]
+  "level dmg": "$splitText[3]",
+  "damage": "$splitText[4]",
+  "take damage": "0",
+  
+  "hp": "0",
+  "maxhp": "0",
+  
+  $c[     ====={ Selection System }=====     ]
+  "in boss battle": "false",
+  "in battle": "$getVar[in-battle;$authorID]",
+  "selection": "true",
+  
+  "familytype": "$trimSpace[undead,undead +,monstrosity,humanoid]",
+  "select entity": "",
+  "position": "",
+  "entity pack": "",
+  "eindex": "",
+  "select rank": "$optOff[$random[1;3]]",
+  "min level": "3",
+  
+  $c[     ====={ Enemy Data }=====     ]
+  "emiss": "false",
+  "emiss chance": "70",
+  
+  "ecrit": "false",
+  "ecrit chance": "30",
+  
+  "ehp": "0",
+  "ehpmax": "0",
+  "ealive": "1",
+  "edead": "0",
+  "erank": "",
+  "efamilytype": "unknown",
+  "edefense": "",
+  "eattack": "false",
+  "break shield": "false",
+  "selectcode": "-familytype",
+  "ename": "Unknown",
+  "eicon": "⚠️",
+  "efamilyicon": "⚰️",
+  "estrength": "Unknown Strength",
+  
+  
+  $c[if weak, it will use weak dmg, if strong it will use strong dmg, if avg or none, then normal damage. ]
+  "edamage average": "0",
+  "edamage strong": "2",
+  "edamage weak": "2",
+  
+  "default dmg": "2",
+  "edamage": "5",
+  "etake damage": "0",
+  
+  "abilities": "poison=5,burning=3,freezing=9",
+  "ticks": "5",
+  
+  $c[FAMILYTYPE,name,icon,ENTITY,name,icon,HP,100,MAXHP,100,STRENGHT,weak,DMG,0,RANK,0,ATTACK,false,MAKE NEW,true]
+  $c[     ====={ Bar System }=====     ]
+  "barname": "",
+  
+  "bar": "",
+  "barmax": "",
+  
+  "empty1": "",
+  "empty2": "",
+  "empty3": "",
+  "full0.5": "",
+  "full1": "",
+  "full1.5": "",
+  "full1.1.5": "",
+  "full2": "",
+  "full2.5": "",
+  "full2.2.5": "",
+  "full3": ""
+  
+  }]
+  $c[🚧 - UPDATE EVENT - 🚧]
+  $httpGet[https://raw.githubusercontent.com/ArcadiA-Core/ArcadiA/refs/heads/main/UPDATE%20EVENT]
+  $eval[$httpResult]
+  $c[🚧    RANDOM EVENT    🚧]
+$if[$checkContains[$customID;$authorIDstartmine]==true]
+  $if[$random[0;100]<=$json[mob encounter chance]]
+  $jsonSetString[mob encounter;true]
+  $else 
+  $stop
+  $endif
+$endif
+  $c[
+                     $c[log display;$getVar[log data;$authorID]]
+  $jsonSetString[item textures;$getVar[textures]]
+  $httpGet[$json[item textures]]
+  $jsonSetString[item textures;$httpResult]
+  
+  $jsonSetString[get texture;coin3]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[get texture]];1]]]
+  $jsonSetString[T$json[get texture];$json[texture capture]]
+
+
+
+
+  - Player Data
+  $async[plrdata]
+  
+$if[$json[debug mode]==true]
+$if[$json[error]==true]
+$jsonSetString[log;$textSplit[[Player Data Event\]:
+❌️ | Error 1: Couldn't locate item "$json[get item]" in player's data.
+Creating item...;
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$jsonSetString[error;false]
+$endif
+$endif
+  $endasync
+  $textSplit[$json[get health];-]
+  $jsonSetString[hp;$splitText[1]]
+  $jsonSetString[maxhp;$splitText[2]]
+  
+  (GAME LEVEL,0,XP,0,MAX XP,0,DEFENSE,false,HEAL,false,BOW,false,DMG,0,ATTACK,false,DEBUG,false)
+  $textSplit[$toLowercase[$json[plrmobstats]];,]
+  $jsonSetString[temp name;defense] - var name
+  $jsonSetString[defense;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;debug] - var name
+  $jsonSetString[debug mode;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;heal] - var name
+  $jsonSetString[heal;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $try$jsonSetString[temp name;medheal] - var name
+  $jsonSetString[medheal;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $endtry
+  $jsonSetString[temp name;bow] - var name
+  $jsonSetString[shoot;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;game level] - var name
+  $jsonSetString[game level;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;xp] - var name
+  $jsonSetString[game xp;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;max xp] - var name
+  $jsonSetString[game maxxp;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  
+  $try
+  $jsonSetString[temp name;xp counter] - var name
+  $jsonSetString[xp counter;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;money counter] - var name
+  $jsonSetString[money counter;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $endtry 
+  
+
+  
+  
+  
+
+
+  - Entity Data
+  (FAMILYTYPE,name,icon,ENTITY,name,icon,HP,100,MAXHP,100,STRENGHT,weak,DMG,0,RANK,0,ATTACK,false,MAKE NEW,true,BOSS,false)
+  $textSplit[$toLowercase[$json[entitymobstats]];,]
+  $jsonSetString[temp name;make new] - var name
+  $jsonSetString[selection;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;familytype] - var name
+  $jsonSetString[efamilytype;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[efamilyicon;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];2]]]]
+  $jsonSetString[temp name;entity] - var name
+  $jsonSetString[ename;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[eicon;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];2]]]]
+  $jsonSetString[temp name;hp] - var name
+  $jsonSetString[ehp;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;maxhp] - var name
+  $jsonSetString[ehpmax;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;strength] - var name
+  $jsonSetString[estrength;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;dmg] - var name
+  $jsonSetString[edamage;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;boss] - var name
+  $jsonSetString[in boss battle;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;rank] - var name
+  $jsonSetString[erank;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+  $jsonSetString[temp name;attack] - var name
+  $jsonSetString[eattack;$toLowercase[$splitText[$sum[$getTextSplitIndex[$json[temp name]];1]]]]
+
+  $if[$json[ehp]<=0]
+  $jsonSetString[selection;true]
+  $endif
+  
+    $if[$json[hp]<=0]
+  $c[selection;true]
+  $jsonSetString[hp;$json[maxhp]]
+  $jsonSetString[in battle;true]
+  $if[$json[game level]>=10]
+  $jsonSetString[ehp;$json[ehpmax]]
+  $endif
+  $endif
+
+
+  ]
+  
+  $c[
+  -------------------------------
+  |  >         BUTTONS          <
+  -------------------------------
+  $async[selectevent]
+  $if[$json[debug mode]==true]
+$jsonSetString[log;$textSplit[[Select Event\]:
+(Player)
+1. Shield: $json[defense]
+2. Bandage: $json[heal]
+3. Bow: $json[shoot]
+4. Medkit: $json[medheal];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif
+  $endasync
+  
+  $if[$customID==$authorIDforfeit]
+  $jsonSetString[forfeit;true]
+  $endif
+  
+  $if[$customID==$authorIDheal]
+  
+  $if[$json[heal]==false]
+  $jsonSetString[heal;true]
+  $else 
+  $jsonSetString[heal;false]
+  $endif
+  $await[selectevent]
+  $endif
+  
+  $if[$customID==$authorIDmedkit]
+  
+  $if[$json[medheal]==false]
+  $jsonSetString[medheal;true]
+  $else 
+  $jsonSetString[medheal;false]
+  $endif
+  $await[selectevent]
+  $endif
+  
+  $if[$customID==$authorIDshield]
+  
+  $if[$json[defense]==false]
+  $jsonSetString[defense;true]
+  $else 
+  $jsonSetString[defense;false]
+  $endif
+  $await[selectevent]
+  $endif
+  
+  $if[$customID==$authorIDbow]
+  
+  $if[$json[shoot]==false]
+  $jsonSetString[shoot;true]
+  $else 
+  $jsonSetString[shoot;false]
+  $endif
+  $await[selectevent]
+  $endif
+  
+  $if[$customID==$authorIDattack]
+  
+  $jsonSetString[attack;true]
+  
+  
+  $jsonSetString[shoot;false]
+  
+  
+  $endif
+  
+  $if[$customID==$authorIDrefresh]
+  $jsonSetString[in battle;false]
+  $jsonSetString[selection;true]
+  $endif
+  
+  
+
+
+----- level 
+$if[$json[in battle]==false]
+  $c[game level;$random[0;25]]$endif
+  
+  $if[$json[game level]<=0]
+  $jsonSetString[game level;1]
+  $endif
+  ]
+  $c[           
+$try
+$if[$json[selection]==true]
+$jsonSetString[in battle;true]
+ $jsonSetString[hp;$json[maxhp]]
+ $jsonSetString[xp counter;0]
+ $jsonSetString[money counter;0]
+----------------------------------------------------------------------------
+🧟                 SELECTION SYSTEM SECTION                                     
+----------------------------------------------------------------------------
+
+
+
+     
+                                  
+ :man_zombie:=:woman_zombie:=undead-familytype=Weak_Zombie,Zombie,Strong Zombie,
+
+
+
+🧟🧙‍♀️🐺 > Getting family type
+$textSplit[$json[familytype];,]
+$jsonSetString[efamilytype;$splitText[$optOff[$random[1;$sum[$getTextSplitLength;1]]]]]
+
+- // if theres no familytype
+$if[$json[efamilytype]==]
+$jsonSetString[efamilytype;$randomText[undead;humanoid;monstrosity]]
+$jsonSetString[log;Couldn't get family type "$json[familytype]"]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+
+$endif
+- //
+
+$if[$json[debug mode]==true]
+$c[### Getting familytype
+```1. FAMILY: $json[efamily]
+2. JOINED: ($joinSplitText[ : ])
+3. LENGTH: $getTextSplitLength
+4. RANDOM: `$try$splitText[$random[1;$getTextSplitLength]]$catch$error[message]$endtry`
+5. CODE: $json[efamilytype]$json[selectcode]
+```
+;false]
+$endif
+
+❓️ > Getting Random Entity
+$httpGet[$getVar[entities]]
+$jsonSetString[entity pack; $httpResult]
+$textSplit[$json[entity pack];=]
+$jsonSetString[eindex;$getTextSplitIndex[$json[efamilytype]$json[selectcode]]]
+$if[$json[debug mode]==no]
+$c[### Getting Random entity
+```Index: $json[eindex]
+Enity pack: $json[entity pack]
+```
+;false]
+$jsonSetString[log;### Getting Random entity
+Index: $json[eindex]
+Enity pack: $json[entity pack]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+
+$endif
+
+$try
+$jsonSetString[efamilyicon;$splitText[$sub[$json[eindex];1]]]
+$catch 
+$if[$json[debug mode]==true]
+$sendMessage[# Error
+```
+$json[entity pack]
+
+
+column: $error[column]
+line: $error[row]
+source: $error[source]
+command: $error[command]
+
+reason: 
+$error[message]
+```
+;false]$endif
+$endtry
+$try
+
+🧟‍♂️ 👈❓️$jsonSetString[select entity;$textSplit[$splitText[$sum[$json[eindex];1]];,]$c[
+Getting entity... --->]$jsonSetString[position;$if[$json[game level]>0]$if[$json[game level]>$json[min level]]$optOff[$random[$sub[$json[game level];$json[min level]];$if[$json[game level]>$getTextSplitLength]$getTextSplitLength$elseif[$json[game level]<=$getTextSplitLength]$sum[$json[game level];1]$endif]]$elseif[$json[game level]<=$json[min level]]$json[game level]$endif]$splitText[$json[position]$endif]]
+$endtry
+
+
+- // if theres no entity
+$if[$json[select entity]==]
+$jsonSetString[position;$sub[$getTextSplitLength;1]]
+
+$if[$json[game level]>=$getTextSplitLength]
+$jsonSetString[select entity;$splitText[$json[position]]]
+$else 
+$jsonSetString[position;1]
+$jsonSetString[select entity;$splitText[1]]
+$endif
+$jsonSetString[log;❌️ | ERROR 2: Couldn't get entity for "$json[efamilytype]". result: $splitText[$json[position]]
+Family Length: $getTextSplitLength
+Game Level: $json[game level]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+
+$if[$json[select entity]==]
+$jsonSetString[position;$sub[$getTextSplitLength;2]]
+$jsonSetString[select entity;$splitText[$json[position]]]
+$jsonSetString[log;❌️ | ERROR 3: Couldn't get entity for "$json[efamilytype]". result: $splitText[$json[position]]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif
+
+$endif
+- //
+
+> Getting Name, Icon And Health
+$textSplit[$json[select entity];_]
+$jsonSetString[ename;$splitText[1]] - // Entity Name
+$jsonSetString[ehpmax;$splitText[2]] - // HP
+$jsonSetString[eicon;$splitText[3]] - // Entity Icon
+$jsonSetString[erank;$json[position]]
+
+$if[$json[debug mode]==true]
+$jsonSetString[selection;false]
+$jsonSetString[log;$textSplit[[Entity Selected\]:
+{$json[select entity] - pos: $json[erank]}
+1. Name: $splitText[1]
+2. Default Health: $splitText[2]
+3. Icon: $splitText[3]
+4. Random Selection: $json[selection];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$c[log data;$if[$getVar[log data;$authorID]!=]$getVar[log data;$authorID]< - >$endif$json[log display];$authorID]
+$c[log display;$getVar[log data;$authorID]]
+$c[1: $getVar[log data;$authorID];false]
+$endif
+
+
+🧮 > Getting strength and calculating health
+$if[$checkContains[$toLowercase[$json[ename]];weak]==true]
+$textSplit[$toLowercase[$json[ename]];weak ]
+$jsonSetString[ename;$joinSplitText[]]
+$jsonSetString[estrength;weak]
+$elseif[$checkContains[$toLowercase[$json[ename]];strong]==true]
+$textSplit[$toLowercase[$json[ename]];strong ]
+$jsonSetString[ename;$joinSplitText[]]
+$jsonSetString[estrength;strong]
+$else 
+$jsonSetString[estrength;average]
+$endif
+
+- 🧮👈 HP ❤️
+
+$jsonSetString[ehpmax;$calculate[$json[ehpmax]$c[
+Game Level]$if[$json[game level]>1]*($json[game level]+$json[erank]-$optOff[$random[0;$sub[$json[game level];1]]])$c[
+Strength]$if[$json[game level]<35]$if[$toLowercase[$json[estrength]]==weak]/8$elseif[$toLowercase[$json[estrength]]==average]/4$else/2$c[strenght ->]$endif$c[if player is below lvl 10, strength will affect hp ->]$endif$c[game ->]$endif]]$c[
+If Health is below 25]$if[$json[ehpmax]<25]$jsonSetString[ehpmax;25]$endif
+
+$jsonSetString[ehp;$json[ehpmax]] - // Automatically gives the entity full hp
+
+$jsonSetString[selection;false] 
+- Selection    -     -      -     -    " Selection Ends Here "
+$else 
+$if[$json[ehp]>0]
+$jsonSetString[selection;false] 
+$endif
+
+$if[$json[debug mode]==no]
+$jsonSetString[log;$textSplit[[Entity\]:
+(pos: $json[erank])
+1. Name: $json[ename]
+2. Icon: $json[eicon]
+3. Random Selection: $json[selection];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$c[log data;$if[$getVar[log data;$authorID]!=]$getVar[log data;$authorID]< - >$endif$json[log display];$authorID]
+$c[log display;$getVar[log data;$authorID]]
+$endif
+
+$endif 
+$catch
+$if[$json[debug mode]==true]
+$sendMessage[# Error
+```
+
+column: $error[column]
+line: $error[row]
+source: $error[source]
+command: $error[command]
+
+reason: $error[message]
+```
+;false]
+$endif
+$endtry
+
+comment ends here: ]
+$c[
+
+
+
+----------------------------------------------------------------------------
+ATTACK!                       MAIN FUNCTIONS SECTION                                     
+----------------------------------------------------------------------------
+ACTION EVENT!
+$if[$json[hp]<=0]
+$jsonSetString[lost;true]
+$endif
+
+$if[$json[ehp]<=0]
+$jsonSetString[win;true]
+$endif
+
+$if[$json[attack]==true]
+
+- Player Attacks first
+$if[$json[medheal]==true]$if[$json[hp]<=$divide[$json[maxhp];$json[max heal2]]]$jsonSetString[medheal;false]$jsonSetString[hp;$sum[$json[hp];$divide[$json[maxhp];$json[max heal2]]]]$if[$json[hp]>=$json[maxhp]]$jsonSetString[hp;$json[maxhp]]$endif
+$jsonSetString[xp counter;$sum[$json[xp counter];$json[xpheals]]]
+$jsonSetString[money counter;$sum[$json[money counter];$json[mheals]]]
+$textSplit[$json[buffs];-]
+$jsonSetString[get item;medkit]$if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+ $editSplitText[$sum[$getTextSplitIndex[$json[get item]];1];$sub[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]];1]]   
+$jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+$setVar[buffs;$joinSplitText[-];$authorID]
+$jsonSetString[buffs;$joinSplitText[-]]$endif
+$else $jsonSetString[medheal;false]$jsonSetString[log;$textSplit[[Heal Event\]:
+❌️ | Error 4: Couldn't heal player as their health is above $divide[$json[maxhp];$json[max heal2]];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif$endif
+
+
+$if[$json[heal]==true]$if[$json[hp]<=$divide[$json[maxhp];$json[max heal]]]$jsonSetString[heal;false]$jsonSetString[hp;$sum[$json[hp];$json[heal buff]]]$if[$json[hp]>=$json[maxhp]]$jsonSetString[hp;$json[maxhp]]$endif
+$jsonSetString[xp counter;$sum[$json[xp counter];$json[xpheals]]]
+$jsonSetString[money counter;$sum[$json[money counter];$json[mheals]]]
+$textSplit[$json[buffs];-]
+$jsonSetString[get item;bandage]$if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+ $editSplitText[$sum[$getTextSplitIndex[$json[get item]];1];$sub[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]];1]]   
+$jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+$setVar[buffs;$joinSplitText[-];$authorID]
+$jsonSetString[buffs;$joinSplitText[-]]$endif
+$else $jsonSetString[heal;false]$jsonSetString[log;$textSplit[[Heal Event\]:
+❌️ | Error 5: Couldn't heal player as their health is above $divide[$json[maxhp];$json[max heal]];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif$endif
+
+$if[$json[ehp]>0]
+$jsonSetString[randomizer;$optOff[$random[1;100]]]
+$jsonSetString[randomizer2;$optOff[$random[1;100]]]
+$jsonSetString[etake damage;$calculate[($sum[$json[damage];$try$random[0;$json[dmg level]]$catch0$endtry]$c[
+On Crit:]$if[$json[randomizer2]<=$json[crit chance]]+$random[0;$json[damage]]$else+0$endif)$c[
+On Miss:]$if[$json[randomizer]<=$json[miss chance]]/$random[2;5]$endif]]$c[
+Subtract Entity Health:]$jsonSetString[ehp;$sub[$json[ehp];$json[etake damage]]]
+(0) Entity Died: $if[$json[ehp]<=0]$jsonSetString[ehp;0]$jsonSetString[win;true]$jsonSetString[in battle;false]$c[game level;$sum[$json[game level];1]]$endif
+$if[$json[etake damage]>$json[damage]]$jsonSetString[crit;true]$endif
+$else 
+$jsonSetString[randomizer;0]
+$jsonSetString[randomizer2;0]
+$jsonSetString[etake damage;0]
+$endif
+$if[$json[debug mode]==true]
+$jsonSetString[log;$textSplit[[Attack Event\]:
+(Player)
+1. randomizer1: $json[randomizer]
+2. randomizer2: $json[randomizer2]
+3. Damage: $json[etake damage]
+4. Crit: $if[$json[randomizer2]<=$json[crit chance]]true$jsonSetString[crit;true]$elsefalse$endif
+5. Miss: $if[$json[randomizer]<=$json[miss chance]]true$elsefalse$endif;
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif
+
+
+
+- Entity Attacks Second
+$if[$json[hp]>0]
+$jsonSetString[randomizer;$optOff[$random[1;100]]]
+$jsonSetString[randomizer2;$optOff[$random[1;100]]] $jsonSetString[edamage;$json[default dmg]]
+$jsonSetString[take damage;$calculate[$json[edamage]*$json[game level]$c[
+LOCKED Random Damage:]$c[+($sub[$random[0;$sum[$json[edamage];1]];1])]$c[
+On Crit:]$if[$json[randomizer2]<=$json[ecrit chance]]*($random[1;$sum[$json[edamage];1]])$else+(0)$endif$c[
+On Miss:]$if[$json[randomizer]<=$json[emiss chance]]/($random[2;$sum[$json[edamage];1]])$endif$c[
+If Strong:]$if[$toLowercase[$json[estrength]]==strong]*($json[edamage strong])$endif$c[
+If Weak:]$if[$toLowercase[$json[estrength]]==weak]/($json[edamage weak])$endif]]$c[
+IF player USE SHIELD]$if[$json[defense]==true]$jsonSetString[take damage;0]
+$jsonSetString[xp counter;$sum[$json[xp counter];$json[xphits]]]
+$jsonSetString[money counter;$sum[$json[money counter];$json[mhits]]]
+$textSplit[$json[buffs];-]
+$jsonSetString[get item;shield]$if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+ $editSplitText[$sum[$getTextSplitIndex[$json[get item]];1];$sub[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]];1]]   
+$jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+$setVar[buffs;$joinSplitText[-];$authorID]
+$jsonSetString[buffs;$joinSplitText[-]]
+$endif$endif $c[
+Subtract Entity Health:]$jsonSetString[hp;$sub[$json[hp];$json[take damage]]]
+(0) Player Died: $if[$json[hp]<=0]$jsonSetString[hp;0]$jsonSetString[lost;true]$jsonSetString[win;false]$jsonSetString[etake damage;0]$jsonSetString[in battle;false]$endif
+$else 
+$jsonSetString[randomizer;0]
+$jsonSetString[randomizer2;0]
+$jsonSetString[take damage;0]
+$endif
+$if[$json[debug mode]==true]
+$jsonSetString[log;$textSplit[[Attack Event\]:
+(Entity)
+1. randomizer1: $json[randomizer]
+2. randomizer2: $json[randomizer2]
+3. Damage: $json[take damage]
+4. Crit: $if[$json[randomizer2]<=$json[ecrit chance]]true$elsefalse$endif
+5. Miss: $if[$json[randomizer]<=$json[emiss chance]]true$elsefalse$endif
+6. Shield: $json[shield];
+]$joinSplitText[
+// ]]
+$jsonSetString[log display;$json[log display]$json[log time]$json[log]< - >]
+$endif
+
+$jsonSetString[defense;false]
+$endif
+
+
+
+
+
+
+
+
+
+
+
+
+$textSplit[$json[buffs];-]
+  $jsonSetString[get item;shield]
+  $if[$splitText[$getTextSplitIndex[$json[get item]]]==$json[get item]]
+  $if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+  $jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+  $jsonSetString[texture name;$toLowercase[$splitText[$getTextSplitIndex[$json[get item]]]]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[texture name]];1]]]
+  $jsonSetString[T$json[get item];$json[texture capture]]
+  $jsonSetString[item display;$json[item display]$c[item icon:]$json[texture capture] $c[item amount:]**$json[$json[get item]]   **] 
+  $c[error;true]
+  $c[plrdata]
+  $endif
+  $else
+  $textSplit[$json[buffs];-]
+  $setVar[buffs;$joinSplitText[-]🛡️-$json[get item]-1-;$authorID]
+  $jsonSetString[buffs;$joinSplitText[-]]
+  $jsonSetString[error;true]
+  $await[plrdata]
+  $jsonSetString[item display;$json[item display]$splitText[$sub[$getTextSplitIndex[$json[get item]];1]] **$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]   **]
+  $endif
+  
+  
+  
+  $textSplit[$json[buffs];-]
+  $jsonSetString[get item;bandage]
+  $if[$splitText[$getTextSplitIndex[$json[get item]]]==$json[get item]]
+  $if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+  $jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+  $jsonSetString[texture name;$toLowercase[$splitText[$getTextSplitIndex[$json[get item]]]]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[texture name]];1]]]
+  $jsonSetString[T$json[get item];$json[texture capture]]
+  $jsonSetString[item display;$json[item display]$c[item icon:]$json[texture capture] **$c[item amount:]$json[$json[get item]]   **]
+  
+  $c[error;true]
+  $c[plrdata]
+  $endif
+  $else
+  $textSplit[$json[buffs];-]
+  $setVar[buffs;$joinSplitText[-]🩹-$json[get item]-1-;$authorID]
+  $jsonSetString[buffs;$joinSplitText[-]]
+  $jsonSetString[error;true]
+  $await[plrdata]
+  $jsonSetString[item display;$json[item display]$splitText[$sub[$getTextSplitIndex[$json[get item]];1]] **$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]   **]
+  $endif
+
+
+ 
+   $textSplit[$json[buffs];-]
+  $jsonSetString[get item;medkit]
+  $if[$splitText[$getTextSplitIndex[$json[get item]]]==$json[get item]]
+  $if[$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]>0]
+  $jsonSetString[$json[get item];$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]]
+  $jsonSetString[texture name;$toLowercase[$splitText[$getTextSplitIndex[$json[get item]]]]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[texture name]];1]]]
+  $jsonSetString[T$json[get item];$json[texture capture]]
+  $jsonSetString[item display;$json[item display]$c[item icon:]$json[texture capture] **$c[item amount:]$json[$json[get item]]   **]
+  
+  $c[error;true]
+  $c[plrdata]
+  $endif
+  $else
+  $textSplit[$json[buffs];-]
+  $setVar[buffs;$joinSplitText[-]🩹-$json[get item]-1-;$authorID]
+  $jsonSetString[buffs;$joinSplitText[-]]
+  $jsonSetString[error;true]
+  $await[plrdata]
+  $jsonSetString[item display;$json[item display]$splitText[$sub[$getTextSplitIndex[$json[get item]];1]] **$splitText[$sum[$getTextSplitIndex[$json[get item]];1]]   **]
+  $endif
+----------------------------------------------------------------------------
+                           
+                           DISPLAY SECTION                                     
+----------------------------------------------------------------------------
+
+
+
+
+]$addContainer[main;$if[$json[win]==true]#00ff00$elseif[$json[lost]==true]#ff0000$else#519226$endif]
+
+$if[$json[forfeit]==true]
+$jsonSetString[selection;true]
+  $jsonSetString[in battle;false]
+  $addTextDisplay[# `You've ran away!`;main]
+$addSeparator[true;small;main]
+  $addMediaGallery[ranaway;main]
+  $addMediaGalleryItem[$json[forfeit thumbnail];;false;ranaway]
+$setVar[in-battle;$json[in battle];$authorID]
+$setVar[plrmobstats;GAME LEVEL,$json[game level],XP,$json[game xp],MAX XP,$json[game maxxp],DEFENSE,$json[defense],HEAL,$json[heal],MEDHEAL,$json[medheal],BOW,$json[shoot],DMG,0,ATTACK,false,DEBUG,$json[debug mode],XP COUNTER,$json[xp counter],MONEY COUNTER,0;$authorID] 
+$setVar[health;$json[hp]-$json[maxhp];$authorID]
+$setVar[entitymobstats;FAMILYTYPE,$json[efamilytype],$json[efamilyicon],ENTITY,$json[ename],$json[eicon],HP,$json[ehp],MAXHP,$json[ehpmax],STRENGTH,$json[estrength],DMG,$json[edamage],RANK,$json[erank],ATTACK,$json[eattack],MAKE NEW,$json[selection],BOSS,$json[in boss battle];$authorID]
+  
+  $stop
+  $endif
+$addTextDisplay[# $if[$json[win]==true]Mob Defeated!$elseif[$json[lost]==true]You Died.$else`Game Level $json[game level]`$endif;main]
+$addSeparator[true;small;main]
+
+$addSection[icon;main]
+$addThumbnail[$json[icon];;false;icon]
+$addTextDisplay[$if[$json[mob encounter]==true]
+```⚠️ | You've stumble upon a monster while mining...```
+$endif
+# $json[eicon] $toTitleCase[$json[ename]] 
+-# **Type:** $if[$json[efamilyicon]!=]$json[efamilyicon] $endif**`$toTitleCase[$json[efamilytype]]`**  *`|`*  $c[
+Strength -->]**Strength: `$toTitleCase[$json[estrength]]`**$c[
+Rank     -->]$if[$json[erank]!=]
+-# Rank $json[erank]$endif
+$c[
+  
+     ----------------------------
+     >       BAR DISPLAY        <
+     ----------------------------
+     For Enemy 🧟‍♂️
+     _________
+  Disclaimer: Don't touch unless you know what you are doing.
+  
+  $textSplit[$getVar[Bar_Textures];
+
+]
+  $textSplit[$joinSplitText[];-]
+  $jsonSetString[barname;enemy] - barname
+  
+  $jsonSetString[empty1;$splitText[$sum[$getTextSplitIndex[$json[barname]];1]]]
+  $jsonSetString[empty2;$splitText[$sum[$getTextSplitIndex[$json[barname]];2]]]
+  $jsonSetString[empty3;$splitText[$sum[$getTextSplitIndex[$json[barname]];3]]]
+  $jsonSetString[full1;$splitText[$sum[$getTextSplitIndex[$json[barname]];4]]]
+  $jsonSetString[full2;$splitText[$sum[$getTextSplitIndex[$json[barname]];5]]]
+  $jsonSetString[full3;$splitText[$sum[$getTextSplitIndex[$json[barname]];6]]]
+  - End
+  Enemies Stats
+🧟❤️]-# $if[$json[ehp]>0]`$json[Talive]`$elseif[$json[ehp]<=0]`$json[Tdead]`$endif **`HP:`**     $jsonSetString[bar;$json[ehp]]$jsonSetString[barmax;$json[ehpmax]]$textSplit[$trimSpace[$if[$json[bar]>=$divide[$json[barmax];20]]$json[full1]$else $json[empty1]$endif $if[$json[bar]>=$divide[$json[barmax];4.5]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];2]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];1.5]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];1.1]]$json[full3]$else $json[empty3]$endif]; ]$joinSplitText[]$c[
+]    **`$numberSeparator[$json[ehp]]/$numberSeparator[$json[ehpmax]]`** $if[$json[hp]>0]$if[$and[$json[attack]==true;$json[etake damage]>-1;$json[ehp]>0]==true]**-$json[etake damage]hp** $if[$json[crit]==true]
+**✨️Critical Hit✨️**$endif$endif$endif
+** **
+
+$c[
+  
+     ----------------------------❤️🩵❤️‍🔥🔥💚❤️‍🩹
+     >       PLAYER BAR DISPLAY        <
+     ----------------------------
+     
+  Disclaimer: Don't touch unless you know what you are doing.
+  
+  $textSplit[$getVar[Bar_Textures];
+
+]
+  $textSplit[$joinSplitText[];-]
+  $jsonSetString[barname;player] - barname
+  
+  $jsonSetString[empty1;$splitText[$sum[$getTextSplitIndex[$json[barname]];1]]]
+  $jsonSetString[empty2;$splitText[$sum[$getTextSplitIndex[$json[barname]];2]]]
+  $jsonSetString[empty3;$splitText[$sum[$getTextSplitIndex[$json[barname]];3]]]
+  $jsonSetString[full1;$splitText[$sum[$getTextSplitIndex[$json[barname]];4]]]
+  $jsonSetString[full2;$splitText[$sum[$getTextSplitIndex[$json[barname]];5]]]
+  $jsonSetString[full3;$splitText[$sum[$getTextSplitIndex[$json[barname]];6]]]
+  - End
+]
+;icon]$c[ - container/section - ]
+
+
+
+$c[------ $c[true;small;main] ---------]
+
+$addTextDisplay[
+$c[❤️]-#  **` YOU `**                 $if[$json[defense]==no]$json[Tshield]$else   $endif                    `Level $json[level]` 
+-# $if[$json[hp]>0]$if[$json[hp]>$divide[$json[maxhp];5]]$json[Talive]$elseif[$json[hp]<=$divide[$json[maxhp];5]]$json[Tlow]$endif$elseif[$json[hp]<=0]$json[Tdead]$endif `HP:`     $jsonSetString[bar;$json[hp]]$jsonSetString[barmax;$json[maxhp]]$textSplit[$trimSpace[$if[$json[bar]>=$divide[$json[barmax];10]]$json[full1]$else $json[empty1]$endif $if[$json[bar]>=$divide[$json[barmax];5]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];2]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];1.5]]$json[full2]$else $json[empty2]$endif $if[$json[bar]>=$divide[$json[barmax];1.1]]$json[full3]$else $json[empty3]$endif]; ]$joinSplitText[] $if[$json[heal]==true]    **+$json[heal buff]** $json[Theal]$else   $endif$if[$json[medheal]==true]**+$divide[100;$json[max heal2]]%** $json[Tmedkit]$if[$json[defense]==false]   $endif$endif$if[$json[defense]==true]$json[Tshield]   $elseif[$json[heal]==true]   $else $endif$c[
+]**$numberSeparator[$json[hp]]/$numberSeparator[$json[maxhp]]**$if[$json[ehp]>0]$if[$and[$json[attack]==true;$json[etake damage]>-1;$json[hp]>=0]==true]
+-# **-$json[take damage]hp**$endif$endif
+** **$if[$json[win]==true]$c[ <- IF WIN 
+$jsonSetString[xp counter;$sum[$json[xp counter];$divide[$json[ehpmax];$json[xphp]]]] 
+$jsonSetString[xp counter;$sum[$json[xp counter];$divide[$json[hp];1]]]
+$if[$checkContains[$toLowercase[$json[estrength]];strength]==true] $jsonSetString[xp counter;$sum[$json[xp counter];$json[xpstrength]]]
+$endif
+$jsonSetString[money counter;$sum[$json[money counter];$divide[$json[ehpmax];$json[mhp]]]]  
+]
+**+**$json[Tcoin3] **$$json[money counter]**
+-# **+$json[xp counter]XP**$c[
+$jsonSetString[game xp;$sum[$json[game xp];$json[xp counter]]]
+$jsonSetString[balance;$sum[$json[balance];$json[money counter]]] ]
+Level **$json[game level]**
+XP **$json[game xp]/$json[game maxxp]**
+$setVar[balance;$json[balance]-$json[token];$authorID]
+
+$endif;main]
+
+$c[ LEVEL UP! ]
+$jsonSetString[game maxxp;$multi[100;$json[game level]]]
+$if[$json[game xp]>=$json[game maxxp]]
+$jsonSetString[game xp;$sub[$json[game xp];$json[game maxxp]]]
+$jsonSetString[game level;$sum[$json[game level];1]]
+$jsonSetString[game maxxp;$multi[100;$json[game level]]]
+$jsonSetString[level up;true]
+$endif
+
+$if[$json[level up]==true]
+$addTextDisplay[# Level Up!;main]
+$addSeparator[true;small;main]
+$addTextDisplay[You're now **level $json[game level]**!
+-# XP **$json[game xp]/$json[game maxxp]**
+-# - Newer monsters were added.$if[$json[game level]==5]
+-# - Entities will be more challenging.$endif$if[$json[game level]==10]
+-# - Entities will now have full health when you die.$endif
+;main]
+$addSeparator[true;small;main]
+$endif
+
+$if[$and[$json[lost]==false;$json[win]==false]==true]
+
+ 
+
+$if[$json[debug mode]==true]
+$if[$json[log display]!=]
+$addSeparator[true;small;main]
+$addTextDisplay[**`Debug Logs`**```js
+$textSplit[$json[log display];< - >]$joinSplitText[
+]
+$if[c==3]
+$removeSplitTextElement[$getTextSplitLength]
+$if[$getTextSplitLength>=3]
+$removeSplitTextElement[$getTextSplitLength]
+$endif
+$if[$getTextSplitLength>=3]
+$removeSplitTextElement[$getTextSplitLength]
+$endif
+$if[$getTextSplitLength>=3]
+$removeSplitTextElement[1]
+$endif
+$c[log data;$joinSplitText[< - >];$authorID]
+$c[2: $getVar[log data;$authorID];false]
+$endif
+```
+;main]
+$addSeparator[true;small;main]
+$endif
+$endif
+
+$try
+
+$c[
+ITEM DISPLAY:
+
+$jsonSetString[itemsdisplay;🛡 1   🩹 1   🏹 1]  ]
+$if[2==2]$addTextDisplay[-# Click "Attack" to continue your fight;main]$endif$endif
+$addActionRow[attack;main]
+----------------------------
+     >       ATTACK BUTTON        <
+----------------------------------------
+$addButtonCV2[$authorIDattack;Attack;danger;$if[$json[ehp]<=0]true$elsefalse$endif;⚔️;attack]$if[$json[debug mode]==true]
+$addButtonCV2[$authorIDrefresh;;secondary;false;:arrows_counterclockwise:;attack]$endif
+
+$c[true;large;main]
+$if[$json[item display]!=]
+$addTextDisplay[** **
+-# $json[item display]
+
+;main]$endif
+$catch $if[$json[debug mode]==true]
+$sendMessage[# Error
+```
+column: $error[column]
+line: $error[row]
+source: $error[source]
+command: $error[command]
+
+reason: 
+$error[message]
+```
+;false]$endif
+$endtry
+$addSeparator[true;large;main]
+$addTextDisplay[
+-# ***Select an item you want to use before you attack.***;main]
+
+
+$addActionRow[useitem;main]
+$addButtonCV2[$authorIDheal;Bandage;$if[$json[bandage]>0]$if[$json[heal]==true]success$elseprimary$endif$elsedanger$endif;$if[$json[bandage]>0]$if[$json[hp]<=$divide[$json[maxhp];$json[max heal]]]false$elsetrue$endif$elsetrue$endif;$json[Tbandage];useitem]
+$addButtonCV2[$authorIDshield;Shield;$if[$json[shield]>0]$if[$json[defense]==true]success$elseprimary$endif$elsedanger$endif;$if[$json[shield]>0]false$elsetrue$endif;$json[Tshield];useitem]
+$if[$json[medkit]>0]$addButtonCV2[$authorIDmedkit;Medkit;$if[$json[medkit]>0]$if[$json[medheal]==true]success$elseprimary$endif$elsedanger$endif;$if[$json[medkit]>0]$if[$json[hp]<=$divide[$json[maxhp];$json[max heal2]]]false$elsetrue$endif$elsetrue$endif;$json[Tmedkit];useitem]
+$endif
+$if[$json[bow]>0]$addButtonCV2[$authorIDbow;Bow;$if[$json[bow]>0]$if[$json[shoot]==true]success$elseprimary$endif$elsedanger$endif;$if[$json[bow]>0]false$elsetrue$endif;<:Bow2:1485998564281815200>;useitem]
+$endif
+$addSection[leave;main]
+$addTextDisplay[** **;leave]
+$addButtonCV2[$authorIDforfeit;Forfeit;secondary;$if[$json[hp]==$json[maxhp]]false$elsetrue$endif;:outbox_tray:;leave]
+$else 
+$c[ WIN OR LOSE SYSTEM HERE ]
+$addActionRow[newgame;main]
+$addButtonCV2[$authorID$if[$json[mob encounter]==true]startmine$elsefightmob$endif;New Battle;$if[$json[level up]==false]primary$elsesuccess$endif;false;🗡;newgame]
+$endif $c[win or lose ending here]
+$c[            Save System         ]
+$jsonSetString[attack;false]
+$setVar[in-battle;$json[in battle];$authorID]
+$setVar[plrmobstats;GAME LEVEL,$json[game level],XP,$json[game xp],MAX XP,$json[game maxxp],DEFENSE,$json[defense],HEAL,$json[heal],MEDHEAL,$json[medheal],BOW,$json[shoot],DMG,0,ATTACK,false,DEBUG,$json[debug mode],XP COUNTER,$json[xp counter],MONEY COUNTER,0;$authorID] 
+$setVar[health;$json[hp]-$json[maxhp];$authorID]
+$setVar[entitymobstats;FAMILYTYPE,$json[efamilytype],$json[efamilyicon],ENTITY,$json[ename],$json[eicon],HP,$json[ehp],MAXHP,$json[ehpmax],STRENGTH,$json[estrength],DMG,$json[edamage],RANK,$json[erank],ATTACK,$json[eattack],MAKE NEW,$json[selection],BOSS,$json[in boss battle];$authorID]
+  
+$endif
