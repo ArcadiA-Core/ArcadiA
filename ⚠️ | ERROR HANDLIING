@@ -23,7 +23,7 @@ Row: $error[row]
 Column: $error[column]
 Source: $error[source]
 Command: $error[command]
-Message: $error[message]
+Message: $replaceText[$error[message];`;;-1]
 ```
 
 Has Message: $message
