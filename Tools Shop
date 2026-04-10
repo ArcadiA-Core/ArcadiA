@@ -1,5 +1,5 @@
 $jsonSetString[itemname;wooden_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;150] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -27,7 +27,7 @@ $endif
 
 
 $jsonSetString[itemname;stone_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;10] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -55,7 +55,7 @@ $endif
 
 
 $jsonSetString[itemname;silver_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;15] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -83,7 +83,7 @@ $endif
 
 
 $jsonSetString[itemname;copper_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;25] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -111,7 +111,7 @@ $endif
 
 
 $jsonSetString[itemname;iron_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;45] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -139,7 +139,7 @@ $endif
 
 
 $jsonSetString[itemname;gold_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;60] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -167,7 +167,7 @@ $endif
 
 
 $jsonSetString[itemname;titanium_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;100] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -196,7 +196,7 @@ $endif
 
 
 $jsonSetString[itemname;emerald_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;200] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -224,7 +224,7 @@ $endif
 
 
 $jsonSetString[itemname;ruby_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;350] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -253,7 +253,7 @@ $endif
 
 
 $jsonSetString[itemname;diamond_pickaxe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;525] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
@@ -282,7 +282,7 @@ $endif
 
 $c[          AXE                  ]
 $jsonSetString[itemname;wooden_axe]
-$jsonSetString[item description;Tool]
+$jsonSetString[item description;🪓 Tool]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;150] <--- original price
 $jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
