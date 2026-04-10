@@ -10,14 +10,14 @@ $sendEmbedMessage[1492212597867413624;;⚠️ | Error $error[row];;
 Execution Time: **$executionTime**
 Is Slash Command: **$isSlash**
 
-Server Name: **$serverName[$guildID]**
-Server ID: **`$guildID`**
+$tryServer Name: **$serverName[$guildID]**
+Server ID: **`$guildID`**$endtry
 
-Channel Name: **$channelName[$channelID]**
+$tryChannel Name: **$channelName[$channelID]**
 Channel ID: **$channelID**
-Directed Channel: https://discord.com/channels/$guildID/$channelID 
+Directed Channel: https://discord.com/channels/$guildID/$channelID $endtry
 
-Directed Message: https://discord.com/channels/$guildID/$channelID/$messageID
+$tryDirected Message: https://discord.com/channels/$guildID/$channelID/$messageID $endtry
 ```
 Row: $error[row]
 Column: $error[column]
@@ -28,4 +28,4 @@ Message: $error[message]
 
 Has Message: $message
 
-;FF0000;$displayName[$authorID];$authorAvatar;Username: $username[$authorID] ID: $authorID;$serverIcon[$guildID];;;true;false]
+;FF0000;$displayName[$authorID];$authorAvatar;Username: $username[$authorID] ID: $authorID;$try$serverIcon[$guildID]$endtry;;;true;false]
