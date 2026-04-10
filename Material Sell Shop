@@ -172,7 +172,7 @@ $endif
 
 
 $jsonSetString[itemname;titanium]
-$jsonSetString[item description;Gem Material]
+$jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;100] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
