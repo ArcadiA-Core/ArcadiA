@@ -1,0 +1,10 @@
+$newSelectMenu[backpackoption;1;1;Inventory]
+$addSelectMenuOption[backpackoption;Foods;foods;;false;🍖]
+$addSelectMenuOption[backpackoption;Materials;materials;;false;🔩]
+$addSelectMenuOption[backpackoption;Buffs;buffs;;false;💪]
+$addSelectMenuOption[backpackoption;Projectiles;projectiles;;false;🏹]
+$addSelectMenuOption[backpackoption;Tools;tools;;false;🔨]
+$addSelectMenuOption[backpackoption;Misc;misc;;false;🔮]
+
+
+
