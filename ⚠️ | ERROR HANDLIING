@@ -1,0 +1,31 @@
+$sendEmbedMessage[1492212597867413624;;⚠️ | Error $error[row];;
+### There's A Script Error!!
+-# Command Folder
+ - **$commandFolder!**
+-# Command Trigger
+ - **$commandTrigger**
+-# Command Name
+ - **$commandName**
+
+Execution Time: **$executionTime**
+Is Slash Command: **$isSlash**
+
+Server Name: **$serverName[$guildID]**
+Server ID: **`$guildID`**
+
+Channel Name: **$channelName[$channelID]**
+Channel ID: **$channelID**
+Directed Channel: https://discord.com/channels/$guildID/$channelID 
+
+Directed Message: https://discord.com/channels/$guildID/$channelID/$messageID
+```
+Row: $error[row]
+Column: $error[column]
+Source: $error[source]
+Command: $error[command]
+Message: $error[message]
+```
+
+Has Message: $message
+
+;FF0000;$displayName[$authorID];$authorAvatar;Username: $username[$authorID] ID: $authorID;$serverIcon[$guildID];;;true;false]
