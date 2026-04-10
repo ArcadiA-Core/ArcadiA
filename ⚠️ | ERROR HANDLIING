@@ -10,14 +10,14 @@ $sendEmbedMessage[1492212597867413624;;⚠️ | Error $error[row];;
 Execution Time: **$executionTime**
 Is Slash Command: **$isSlash**
 
-$tryServer Name: **$serverName[$guildID]**
-Server ID: **`$guildID`**$endtry
+$try$if[$guildID!=]Server Name: **$serverName[$guildID]**
+Server ID: **`$guildID`**$endif$endtry
 
-$tryChannel Name: **$channelName[$channelID]**
+$try$if[$guildID!=]Channel Name: **$channelName[$channelID]**
 Channel ID: **$channelID**
-Directed Channel: https://discord.com/channels/$guildID/$channelID $endtry
+Directed Channel: https://discord.com/channels/$guildID/$channelID $endif$endtry
 
-$tryDirected Message: https://discord.com/channels/$guildID/$channelID/$messageID $endtry
+$try$if[$guildID!=]Directed Message: https://discord.com/channels/$guildID/$channelID/$messageID $endif$endtry
 ```
 Row: $error[row]
 Column: $error[column]
@@ -28,4 +28,4 @@ Message: $error[message]
 
 Has Message: $message
 
-;FF0000;$displayName[$authorID];$authorAvatar;Username: $username[$authorID] ID: $authorID;$try$serverIcon[$guildID]$endtry;;;true;false]
+;FF0000;$displayName[$authorID];$authorAvatar;Username: $username[$authorID] ID: $authorID;$try$if[$guildID!=]$serverIcon[$guildID]$endif$endtry;;;true;false]
