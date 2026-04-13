@@ -1,3 +1,32 @@
+$c[             FISHING ROD               ]
+$jsonSetString[itemname;fishing_rod]
+$jsonSetString[item description;🎣 Tool]
+$jsonSetString[item amount;1]
+$jsonSetString[item price;250] <--- original price
+$jsonSetString[max items;1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[is token;false]
+$jsonSetString[can sell;false]
+$jsonSetString[item name;$toTitleCase[$replaceText[$json[itemname];_; ;-1]]]
+$try
+$jsonSetString[get texture;$json[itemname]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[get texture]];1]]]
+  $jsonSetString[T$json[get texture];$json[texture capture]]
+$endtry
+$try
+$textSplit[$getVar[$json[category select];$authorID];-]
+$if[$splitText[$getTextSplitIndex[$json[itemname]]]==$json[itemname]]
+$jsonSetString[item owned;$splitText[$sum[$getTextSplitIndex[$json[itemname]];1]]]
+$jsonSetString[item icon;$json[T$json[itemname]]]
+$c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
+$endif
+$endtry
+$if[$json[item owned]<=1]
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+$endif 
+
+
 $jsonSetString[itemname;wooden_pickaxe]
 $jsonSetString[item description;⛏️ Tool]
 $jsonSetString[item amount;1]
