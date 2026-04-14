@@ -299,7 +299,7 @@ $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount
 $jsonSetString[itemname;abyss_fish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;3000] <--- original price
+$jsonSetString[item price;10000] <--- original price
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
@@ -326,7 +326,7 @@ $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount
 $jsonSetString[itemname;void_leviathan]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;4000] <--- original price
+$jsonSetString[item price;1000000] <--- original price
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
