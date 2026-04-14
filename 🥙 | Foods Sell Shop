@@ -296,7 +296,7 @@ $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount
 
 
 
-$jsonSetString[itemname;abyss_fish]
+$jsonSetString[itemname;whale]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;10000] <--- original price
@@ -323,10 +323,65 @@ $endtry
 $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
 
 
+$jsonSetString[itemname;spouting_whale]
+$jsonSetString[item description;Fish]
+$jsonSetString[item amount;1]
+$jsonSetString[item price;50000] <--- original price
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[is token;false]
+$jsonSetString[can sell;true]
+$jsonSetString[item name;$toTitleCase[$json[itemname]]]
+$try
+$jsonSetString[get texture;$json[itemname]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[get texture]];1]]]
+  $jsonSetString[T$json[get texture];$json[texture capture]]
+$endtry
+$try
+$textSplit[$getVar[$json[category select];$authorID];-]
+$if[$splitText[$getTextSplitIndex[$json[itemname]]]==$json[itemname]]
+$jsonSetString[item owned;$splitText[$sum[$getTextSplitIndex[$json[itemname]];1]]]
+$jsonSetString[item description;($json[item owned]) - $json[item description]]
+$jsonSetString[item icon;$json[T$json[itemname]]]
+$c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
+$endif
+$endtry
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+
+
+
+$jsonSetString[itemname;abyss_fish]
+$jsonSetString[item description;Fish]
+$jsonSetString[item amount;1]
+$jsonSetString[item price;500000] <--- original price
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[is token;false]
+$jsonSetString[can sell;true]
+$jsonSetString[item name;$toTitleCase[$json[itemname]]]
+$try
+$jsonSetString[get texture;$json[itemname]]
+  $textSplit[$json[item textures];
+]$textSplit[$joinSplitText[];=]
+  $jsonSetString[texture capture;$splitText[$sum[$getTextSplitIndex[$json[get texture]];1]]]
+  $jsonSetString[T$json[get texture];$json[texture capture]]
+$endtry
+$try
+$textSplit[$getVar[$json[category select];$authorID];-]
+$if[$splitText[$getTextSplitIndex[$json[itemname]]]==$json[itemname]]
+$jsonSetString[item owned;$splitText[$sum[$getTextSplitIndex[$json[itemname]];1]]]
+$jsonSetString[item description;($json[item owned]) - $json[item description]]
+$jsonSetString[item icon;$json[T$json[itemname]]]
+$c[shop-system;itemname|$json[itemname]|$json[item icon]|price|$json[item price]|0|amount|$json[item amount]|owned|$json[item owned]|sell|0|category|$json[category select]|;$authorID]
+$endif
+$endtry
+$addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount]>1]s$endif;$authorIDselect|name|$json[itemname]|$|$json[item price]|$json[can sell]|$json[is token]|amt|$json[item amount]|$json[max items];$json[item description];;false;$json[category select]ID]
+
+
 $jsonSetString[itemname;void_leviathan]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;1000000] <--- original price
+$jsonSetString[item price;5000000] <--- original price
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
