@@ -2,7 +2,7 @@ $jsonSetString[itemname;basic_fish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;14] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -28,7 +28,7 @@ $jsonSetString[itemname;shrimp]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;10] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -54,7 +54,7 @@ $jsonSetString[itemname;crab]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;16] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -80,7 +80,7 @@ $jsonSetString[itemname;tropical_fish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;40] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -106,7 +106,7 @@ $jsonSetString[itemname;squid]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;35] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -132,7 +132,7 @@ $jsonSetString[itemname;lobster]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;50] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -158,7 +158,7 @@ $jsonSetString[itemname;blowfish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;140] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -184,7 +184,7 @@ $jsonSetString[itemname;octopus]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;100] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -210,7 +210,7 @@ $jsonSetString[itemname;jellyfish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;160] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -236,7 +236,7 @@ $jsonSetString[itemname;shark]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;1000] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -262,7 +262,7 @@ $jsonSetString[itemname;dolphin]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;600] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -279,7 +279,7 @@ $jsonSetString[itemname;abyss_fish]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;3000] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
@@ -305,7 +305,7 @@ $jsonSetString[itemname;void_leviathan]
 $jsonSetString[item description;Fish]
 $jsonSetString[item amount;1]
 $jsonSetString[item price;4000] <--- original price
-$jsonSetString[max items;-1] <--- max amount of items they can purchase until can't. if 0 its inf
+$jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;false]
 $jsonSetString[can sell;true]
 $jsonSetString[item name;$toTitleCase[$json[itemname]]]
