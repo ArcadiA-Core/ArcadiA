@@ -2,7 +2,7 @@
 $jsonSetString[itemname;coal]
 $jsonSetString[item description;Fuel + Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;6] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;10] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -60,7 +60,7 @@ $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount
 $jsonSetString[itemname;copper]
 $jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;5] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;8] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -87,7 +87,7 @@ $addStringSelectOption[x$json[item amount] $json[item name]$if[$json[item amount
 $jsonSetString[itemname;diamond]
 $jsonSetString[item description;Gem + Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;600] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;500000] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -116,7 +116,7 @@ $endif
 $jsonSetString[itemname;ruby]
 $jsonSetString[item description;Gem Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;300] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;30000] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -145,7 +145,7 @@ $endif
 $jsonSetString[itemname;emerald]
 $jsonSetString[item description;Gem Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;200] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;10000] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -174,7 +174,7 @@ $endif
 $jsonSetString[itemname;titanium]
 $jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;100] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;5000] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -204,7 +204,7 @@ $endif
 $jsonSetString[itemname;gold_ore]
 $jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;80] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;800] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -233,7 +233,7 @@ $endif
 $jsonSetString[itemname;iron_ore]
 $jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;35] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;500] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
@@ -263,7 +263,7 @@ $endif
 $jsonSetString[itemname;silver]
 $jsonSetString[item description;Material]
 $jsonSetString[item amount;1]
-$jsonSetString[item price;15] <--- original price will be divided, so 2 will actually be 1
+$jsonSetString[item price;150] <--- original price will be divided, so 2 will actually be 1
 $jsonSetString[max items;0] <--- max amount of items they can purchase until can't. if 0 its inf
 $jsonSetString[is token;true]
 $jsonSetString[can sell;true]
